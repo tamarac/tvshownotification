@@ -14,3 +14,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->post('/series', [
+    'as' => 'seriesCreate', 'uses' => 'SerieController@create'
+]);
+$router->get('/series', [
+    'as' => 'seriesList', 'uses' => 'SerieController@list'
+]);
